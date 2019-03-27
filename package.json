@@ -1,0 +1,39 @@
+{
+  "name": "Myproject",
+  "version": "0.0.0",
+  "description": "My test project",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp-install": "~0.6.0",
+    "uuid": "^3.0.1"
+  },
+  "devDependencies": {
+    "browser-sync": "~2.18.5",
+    "del": "~2.2.2",
+    "gulp": "~3.9.1",
+    "gulp-autoprefixer": "~3.1.1",
+    "gulp-cache": "~0.4.5",
+    "gulp-compass": "~2.1.0",
+    "gulp-concat": "~2.6.1",
+    "gulp-imagemin": "~3.1.1",
+    "gulp-install": "~0.6.0",
+    "gulp-minify": "0.0.14",
+    "gulp-plumber": "~1.1.0",
+    "gulp-sass": "^3.0.0",
+    "gulp-spritesmith": "0.0.2",
+    "moment": "~2.17.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Santoshah/Loop-Array-object-in-table.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Santoshah/Loop-Array-object-in-table/issues"
+  },
+  "homepage": "https://github.com/Santoshah/Loop-Array-object-in-table"
+}
