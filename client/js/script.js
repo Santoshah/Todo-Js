@@ -2,15 +2,14 @@ var STItem = JSON.parse(localStorage.getItem("todoList"))
 
 var delStorage = false;
 
-// if(STItem == null) {
 	var generator = new IDGenerator();
 	var counter = "";
+if(STItem == null) {
 	var listOftext = [];
-// }
-//  else {
-// 	var counter = STItem.length;
-// 	var listOftext = STItem;
-// }
+}
+ else {
+	var listOftext = STItem;
+}
 
 var text;
 
