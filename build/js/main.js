@@ -6,13 +6,15 @@ var STItem = JSON.parse(localStorage.getItem("todoList"))
 
 var delStorage = false;
 
-if(STItem == null) {
-	var counter = 0;
+// if(STItem == null) {
+	var generator = new IDGenerator();
+	var counter = "";
 	var listOftext = [];
-} else {
-	var counter = STItem.length;
-	var listOftext = STItem;
-}
+// }
+//  else {
+// 	var counter = STItem.length;
+// 	var listOftext = STItem;
+// }
 
 var text;
 
@@ -42,7 +44,7 @@ clearFocus();
 
 function listTodo(ele){
 	if(event.keyCode == 13) {
-
+		counter = generator.generate();
 		var id = "item_"+counter;
 		var data = getId.value;
 		text = "<tr id='item_"+counter+"'><td><input type='checkbox' name='checkme' id='chk_"+counter+"' onclick=\"checkMe('"+counter+"')\"> </td><td><span class='todotextclass' id='todoText_"+counter+"'>"+data+"</span> </td><td><p data-placement=\"top\" onclick=\"editTodo("+counter+")\" data-toggle=\"tooltip\" title=\"Edit\"><button class=\"btn btn-primary btn-xs\" data-title=\"Edit\" data-toggle=\"modal\" data-target=\"#edit\" ><span class=\"glyphicon glyphicon-pencil\"></span></button></p></td><td><p><button class=\"btn btn-danger btn-xs\"  onclick=\"removeTodoList('item_"+counter+"')\" data-title=\"Delete\" data-toggle=\"modal\" data-target=\"#delete\" ><span class=\"glyphicon glyphicon-trash\"></span></button></p></td></tr>";
@@ -50,7 +52,7 @@ function listTodo(ele){
 		// var add = new addToArray("todoText"+counter,data);
 		// querySelect(counter);
 		listOftext.push({id : "todoText_"+counter, todoText: data});
-		counter++;
+		// counter++;
 		console.log(listOftext);
 		localStorage.setItem("todoList", JSON.stringify(listOftext));
 		clearFocus();
@@ -151,3 +153,32 @@ function removeTodoList(item){
 
 
 
+
+
+
+	 function IDGenerator() {
+	 
+		 this.length = 8;
+		 this.timestamp = +new Date;
+		 
+		 var _getRandomInt = function( min, max ) {
+			return Math.floor( Math.random() * ( max - min + 1 ) ) + min;
+		 }
+		 
+		 this.generate = function() {
+			 var ts = this.timestamp.toString();
+			 var parts = ts.split( "" ).reverse();
+			 var id = "";
+			 
+			 for( var i = 0; i < this.length; ++i ) {
+				var index = _getRandomInt( 0, parts.length - 1 );
+				id += parts[index];	 
+			 }
+			 
+			 return id;
+		 }
+
+		 
+	 }
+	 
+	 
